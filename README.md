@@ -83,7 +83,7 @@ Each analyzes the command's cost *before/without* trusting the wall-clock:
 | 1 | Bytecode instruction count | count | CPython `compile()`+`dis` op count |
 | 2 | Weighted bytecode cost | score | per-opcode cost weights |
 | 3 | Complexity / Big-O | score | AST loop-nesting × literal trip counts |
-| 4 | **cachegrind cycles** | **cycles → seconds** | run under valgrind cachegrind **inside the task's Docker**, `--trace-children`, full command; the only method whose output is physically time |
+| 4 | **cachegrind cycles** | **cycles → seconds** | run under valgrind cachegrind **inside the task's Docker**, `--trace-children`, full command; output is in cycles, so dividing by CPU frequency gives seconds |
 | 5 | Branch mispredictions (TAGE/perceptron role) | count | from cachegrind `--branch-sim` |
 | 6 | WCET-style worst-case bound | score | worst-case path over AST |
 
@@ -101,7 +101,7 @@ right "compiled form". Only **method 4** produces a time estimate
 The measured durations are **cold-start** (every command pays CPython/process
 boot). We measured the fixed startup cost a-priori (CPython `-c pass` ≈ 80.7M
 instructions; `bash -c true` ≈ 1.24M) and subtract it to show the **warm-worker**
-case (persistent interpreters), where only the command's real work remains.
+case (persistent interpreters), where only the command's work remains.
 
 ---
 
@@ -116,13 +116,14 @@ case (persistent interpreters), where only the command's real work remains.
 This matters: any metric averaged over all commands is dominated by the trivial
 ~0.1s majority, where every predictor trivially outputs ~0.1s. **We therefore
 report the raw predictions, not an aggregate "accuracy", and look specifically
-at commands that do real work.**
+at the commands that do more work.**
 
 ### 4.2 The six methods' native outputs
 Methods 1,2,3,6 are **identical for shell commands** (they reduce to file-size)
-and are `N/A` where there is no Python code. Method 4 is the only time estimate.
-Method 5 (branch mispredicts) scales with work but is a count, not seconds.
-Full per-command values: `all_methods_table.csv`.
+and are `N/A` where there is no Python code. Method 4 is expressed in cycles and
+converts to seconds via the CPU frequency; methods 1,2,3,5,6 are cost scores
+(counts), which indicate work but are not in time units. Full per-command
+values: `all_methods_table.csv`.
 
 ### 4.3 Head-to-head predictions (seconds), illustrative rows
 `ACT` = actual, `CONT` = Continuum (first-word avg), `M4` = cachegrind/5.1GHz.
@@ -139,12 +140,12 @@ Observations (numbers, not spin):
 - **Continuum is a first-word hardcode.** For `ls -la && <6.3s tree walk>` it
   predicts **0.126 s** (first word `ls` → "fast"), off by ~50×. It only matches
   the trivial ~0.1s majority by coincidence.
-- **M4 tracks real work.** It predicts **6.03 s** for that 6.3 s command — the
-  case where Continuum fails hardest.
-- **M4 breaks on `pytest -x` / `pip install`**: cachegrind's instruction count
+- **M4 tracks command work.** It predicts **6.03 s** for that 6.3 s command —
+  the case where Continuum diverges most.
+- **M4 diverges on `pytest -x` / `pip install`**: cachegrind's instruction count
   diverges from native wall-clock (valgrind runs a fuller/slower path, early
   exits differ), so it over-predicts (e.g. 135 s for a 5 s run). These are a
-  minority but are real failures of the cycle-count approach.
+  minority but are a clear limitation of the cycle-count approach.
 
 ### 4.4 Warm-start view (`warm_cold_table.csv`)
 Removing the fixed startup cost:
@@ -154,23 +155,28 @@ Removing the fixed startup cost:
  6.334     6.244     0.126    6.028    6.028    ls && tree walk
  2.672     2.582     0.413   11.547   11.531    pip install
 ```
-- Trivial commands collapse to **~0 s of real work** when warm — i.e. Continuum's
+- Trivial commands collapse to **~0 s of work** when warm — i.e. Continuum's
   ~0.1 s prediction for them is predicting **boot overhead a warm worker would
-  not pay**, not actual work.
+  not pay**, not the command's work.
 - Work-dominated commands are unchanged (startup is negligible there), and that
   is exactly where first-word prediction fails and work-measurement is needed.
 
-### 4.5 Honest summary
-- Continuum's first-word average is **correct only for trivial startup-dominated
-  commands** and **wrong whenever a command does non-trivial work** (compute, big
-  traversal, install, tests) — because it ignores everything but the first word.
-- Of the six a-priori methods, **only method 4 (cachegrind cycles / frequency)
-  is a physical time predictor.** It captures real work (where Continuum fails)
-  but over-predicts test-runner/install commands where instruction count ≠ native
-  time. Methods 1,2,3,5,6 are cost indicators, not times.
-- **No method is a universally accurate seconds-predictor** on this workload;
-  duration is governed by heterogeneous causes (cold start, compute, I/O,
-  package installs) that no single a-priori signal fully captures.
+### 4.5 Summary
+- Continuum's first-word average matches the trivial startup-dominated commands
+  and diverges whenever a command does non-trivial work (compute, large
+  traversal, install, tests), because it keys only on the first word.
+- All six methods are predictors. They differ in unit: method 4 (cachegrind
+  cycles) is expressed directly in cycles, so dividing by the CPU frequency
+  gives a time estimate in seconds; methods 1, 2, 3, 5, 6 produce cost scores
+  (bytecode-op counts, complexity, branch mispredictions, worst-case bounds)
+  that indicate the amount of work but are not in time units without a
+  per-method scaling.
+- Method 4 tracks command work (e.g. the 6.3 s tree-walk Continuum predicts as
+  0.13 s) and over-predicts test-runner/install commands, where the instruction
+  count measured under valgrind diverges from native wall-clock.
+- No single a-priori signal predicts duration accurately across all commands on
+  this workload, because duration is governed by heterogeneous causes (cold
+  start, compute, I/O, package installs).
 
 ---
 
