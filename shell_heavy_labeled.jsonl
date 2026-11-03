@@ -1,0 +1,250 @@
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 2.0027380087412894, "feat": [2.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3953.776781039778, "feat": [0.0, 8000000.0]}
+{"first_word": "wc", "cmd": "seq 3000000 | wc -l > /dev/null", "dur_ms": 29.52567400643602, "feat": [2.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(8000000)))\"", "dur_ms": 53.04846103535965, "feat": [3.0, 8000000.0]}
+{"first_word": "wc", "cmd": "seq 500000 | wc -l > /dev/null", "dur_ms": 6.789949024096131, "feat": [2.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 30.753463972359896, "feat": [4.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 3000000 | wc -l > /dev/null", "dur_ms": 26.962261006701738, "feat": [2.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 177.57930100196972, "feat": [0.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 669.7625750093721, "feat": [3.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 32.95510495081544, "feat": [0.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1378.1647290452383, "feat": [0.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 17.92795502115041, "feat": [3.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 681.8404969526455, "feat": [3.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.8513720133341849, "feat": [2.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 1.7639080178923905, "feat": [1.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 224.6867929934524, "feat": [3.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 31.176108052022755, "feat": [4.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 106.47680796682835, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 56.72862799838185, "feat": [4.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 225.0612910138443, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 217.51202404266223, "feat": [3.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 55.060395039618015, "feat": [4.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 29.708627960644662, "feat": [3.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 23.002959962468594, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 154.03658599825576, "feat": [4.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 724.8724779929034, "feat": [3.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 30.371833010576665, "feat": [4.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 7.00892397435382, "feat": [1.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 208.79945997148752, "feat": [3.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 408.1782909925096, "feat": [4.0, 8000000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 66.49726297473535, "feat": [1.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 29.51015596045181, "feat": [0.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1383.2631920231506, "feat": [0.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3943.46914102789, "feat": [0.0, 8000000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 72.46478402521461, "feat": [2.0, 8000000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 68.20785702439025, "feat": [2.0, 8000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.8488739733584225, "feat": [2.0, 100000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.420830021146685, "feat": [2.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 209.3333230004646, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(8000000)))\"", "dur_ms": 57.173931039869785, "feat": [3.0, 8000000.0]}
+{"first_word": "grep", "cmd": "seq 1000000 | grep -c 7 > /dev/null", "dur_ms": 8.093781012576073, "feat": [1.0, 1000000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 5.322023993358016, "feat": [1.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 29.93713697651401, "feat": [3.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 159.8879579687491, "feat": [4.0, 3000000.0]}
+{"first_word": "grep", "cmd": "seq 1000000 | grep -c 7 > /dev/null", "dur_ms": 8.062974025961012, "feat": [1.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 106.34345101425424, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 408.6113710072823, "feat": [4.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1387.5224009971134, "feat": [0.0, 3000000.0]}
+{"first_word": "grep", "cmd": "seq 3000000 | grep -c 7 > /dev/null", "dur_ms": 24.437708023469895, "feat": [1.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 31.838722992688417, "feat": [0.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 158.1444579642266, "feat": [4.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 17.40170904668048, "feat": [3.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 7.779109990224242, "feat": [1.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 12.667086033616215, "feat": [4.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 4.062348045408726, "feat": [1.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 679.7083090059459, "feat": [3.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 6.584468006622046, "feat": [4.0, 100000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.7810339923016727, "feat": [2.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 28.200974978972226, "feat": [3.0, 3000000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 2.026784000918269, "feat": [1.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 377.51657102489844, "feat": [0.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(8000000)))\"", "dur_ms": 56.1151480069384, "feat": [3.0, 8000000.0]}
+{"first_word": "grep", "cmd": "seq 3000000 | grep -c 7 > /dev/null", "dur_ms": 25.37912398111075, "feat": [1.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 500000 | wc -l > /dev/null", "dur_ms": 10.921102948486805, "feat": [2.0, 500000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 30.922267003916204, "feat": [0.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(8000000)];a.sort();print(a[0])\"", "dur_ms": 2017.7227149833925, "feat": [3.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 27.505873993504792, "feat": [4.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 412.11792995454744, "feat": [4.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 97.56053995806724, "feat": [3.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.962620997801423, "feat": [2.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 16.956585983280092, "feat": [3.0, 500000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1390.0368069880642, "feat": [0.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 3000000 | wc -l > /dev/null", "dur_ms": 23.648892994970083, "feat": [2.0, 3000000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 66.84933800715953, "feat": [1.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 152.61271101189777, "feat": [4.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 177.04962595598772, "feat": [0.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 224.14068796206266, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 29.83090002089739, "feat": [3.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 67.77590303681791, "feat": [2.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(8000000)];a.sort();print(a[0])\"", "dur_ms": 2009.6961349481717, "feat": [3.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 383.41648696223274, "feat": [0.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 30.76331497868523, "feat": [0.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 29.555204964708537, "feat": [4.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 69.39095398411155, "feat": [2.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 155.35298798931763, "feat": [4.0, 3000000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 6.488318031188101, "feat": [1.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 9.393766988068819, "feat": [4.0, 100000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 73.94022500375286, "feat": [2.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 408.60479400726035, "feat": [4.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 182.8694840078242, "feat": [0.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 683.2399039994925, "feat": [3.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 23.329899995587766, "feat": [3.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 387.82097201328725, "feat": [0.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 18.213151954114437, "feat": [3.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 3000000 | grep -c 7 > /dev/null", "dur_ms": 26.140225993003696, "feat": [1.0, 3000000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 1.8767959554679692, "feat": [1.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 3000000 | grep -c 7 > /dev/null", "dur_ms": 23.61367701087147, "feat": [1.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 153.31062203040347, "feat": [4.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1375.7236920064315, "feat": [0.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 51.28481000429019, "feat": [4.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(8000000)))\"", "dur_ms": 54.54946402460337, "feat": [3.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 412.8926940029487, "feat": [4.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 412.0681239874102, "feat": [4.0, 8000000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 67.60543200653046, "feat": [1.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 223.59513997798786, "feat": [3.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 2.025796042289585, "feat": [2.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 1.8406399758532643, "feat": [1.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 32.78654703171924, "feat": [3.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1469.4134810124524, "feat": [0.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 698.4126990428194, "feat": [3.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.663853000849485, "feat": [2.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 19.948225002735853, "feat": [3.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.317212002817541, "feat": [2.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 500000 | wc -l > /dev/null", "dur_ms": 5.950537975877523, "feat": [2.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 28.398527996614575, "feat": [3.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 29.609802004415542, "feat": [3.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 212.5256049912423, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 224.59488699678332, "feat": [3.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 11.265700974036008, "feat": [4.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 18.493892974220216, "feat": [3.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 500000 | wc -l > /dev/null", "dur_ms": 9.16444999165833, "feat": [2.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 243.81372897187248, "feat": [3.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 4292.1651740325615, "feat": [0.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 16.096915991511196, "feat": [3.0, 100000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 71.00701000308618, "feat": [2.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 15.509864024352282, "feat": [3.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 389.11442103562877, "feat": [0.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 178.96666401065886, "feat": [0.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 673.8234880031087, "feat": [3.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1399.5737769873813, "feat": [0.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 385.14886802295223, "feat": [0.0, 1000000.0]}
+{"first_word": "grep", "cmd": "seq 1000000 | grep -c 7 > /dev/null", "dur_ms": 8.016315987333655, "feat": [1.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 108.39605098590255, "feat": [3.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 28.99837400764227, "feat": [3.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 66.91760598914698, "feat": [1.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(8000000)))\"", "dur_ms": 49.72544504562393, "feat": [3.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 52.85151500720531, "feat": [4.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.7903330153785646, "feat": [2.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(8000000)];a.sort();print(a[0])\"", "dur_ms": 1997.1215309924446, "feat": [3.0, 8000000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 2.071934984996915, "feat": [1.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 189.64863696601242, "feat": [0.0, 500000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 181.11733900150284, "feat": [0.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 97.50369802350178, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 51.9484969554469, "feat": [4.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 21.549624972976744, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 33.39962096652016, "feat": [3.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3957.931218028534, "feat": [0.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 28.92730396706611, "feat": [3.0, 100000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.8705050460994244, "feat": [2.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 1000000 | grep -c 7 > /dev/null", "dur_ms": 12.095450016204268, "feat": [1.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 183.56071499874815, "feat": [0.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 7.494984020013362, "feat": [1.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 22.750510019250214, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 98.53026195196435, "feat": [3.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(8000000)];a.sort();print(a[0])\"", "dur_ms": 1990.2051109820604, "feat": [3.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 20.773958996869624, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 105.1765700103715, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 408.83499901974574, "feat": [4.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 52.32079600682482, "feat": [4.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 20.568507025018334, "feat": [3.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 3000000 | wc -l > /dev/null", "dur_ms": 24.67909798724577, "feat": [2.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.704042952042073, "feat": [2.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 27.71552896592766, "feat": [3.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 500000 | wc -l > /dev/null", "dur_ms": 6.654450029600412, "feat": [2.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 408.639081986621, "feat": [4.0, 8000000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 7.526074012275785, "feat": [1.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 3000000 | wc -l > /dev/null", "dur_ms": 29.09253299003467, "feat": [2.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 17.68883701879531, "feat": [3.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 380.12529304251075, "feat": [0.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 155.155974032823, "feat": [4.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 25.296204024925828, "feat": [3.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 696.5407120296732, "feat": [3.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 500000 | wc -l > /dev/null", "dur_ms": 7.174810045398772, "feat": [2.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 3.047218022402376, "feat": [2.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 51.82628001784906, "feat": [4.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 19.15398199344054, "feat": [3.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 22.05558301648125, "feat": [3.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 671.5834819478914, "feat": [3.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3939.452391001396, "feat": [0.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 670.8286569919437, "feat": [3.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 103.8589800009504, "feat": [3.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 17.289120005443692, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 156.78409399697557, "feat": [4.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1384.260583028663, "feat": [0.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1382.2078480152413, "feat": [0.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 155.01583903096616, "feat": [4.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.9940310157835484, "feat": [2.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 6.912899028975517, "feat": [4.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 33.62423798535019, "feat": [3.0, 3000000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.910323969554156, "feat": [2.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 34.95338698849082, "feat": [4.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 66.62168801994994, "feat": [1.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3962.535554950591, "feat": [0.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 690.117285004817, "feat": [3.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 32.479048997629434, "feat": [3.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 3000000 | shuf | sort -n > /dev/null", "dur_ms": 1397.9807660216466, "feat": [0.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(500000)))\"", "dur_ms": 18.968451011460274, "feat": [3.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 56.40137800946832, "feat": [4.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3959.978028025944, "feat": [0.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3944.462684041355, "feat": [0.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 107.61377203743905, "feat": [3.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 107.50259004998952, "feat": [3.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.02517299214378, "feat": [2.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.414060994051397, "feat": [2.0, 1000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(3000000)))\"", "dur_ms": 33.63453701604158, "feat": [3.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(8000000)];a.sort();print(a[0])\"", "dur_ms": 1993.04694699822, "feat": [3.0, 8000000.0]}
+{"first_word": "wc", "cmd": "seq 1000000 | wc -l > /dev/null", "dur_ms": 7.439709967002273, "feat": [2.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 7.14443699689582, "feat": [4.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 68.57556401519105, "feat": [1.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 105.44686100911349, "feat": [3.0, 500000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 185.94152497826144, "feat": [0.0, 500000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 9.490510041359812, "feat": [4.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 1000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 57.52928397851065, "feat": [4.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 1.8955669947899878, "feat": [2.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 30.03727999748662, "feat": [3.0, 100000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 31.684447021689266, "feat": [0.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 3000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 156.4063269761391, "feat": [4.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 8.271388011053205, "feat": [4.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(1000000)];a.sort();print(a[0])\"", "dur_ms": 227.77947603026405, "feat": [3.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 69.1956200171262, "feat": [2.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 717.8409629850648, "feat": [3.0, 3000000.0]}
+{"first_word": "awk", "cmd": "seq 100000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 9.157218039035797, "feat": [4.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 100000 | grep -c 7 > /dev/null", "dur_ms": 2.180251991376281, "feat": [1.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 26.41438302816823, "feat": [4.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 6.723472033627331, "feat": [1.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 19.303144013974816, "feat": [3.0, 100000.0]}
+{"first_word": "awk", "cmd": "seq 500000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 27.961918036453426, "feat": [4.0, 500000.0]}
+{"first_word": "wc", "cmd": "seq 100000 | wc -l > /dev/null", "dur_ms": 2.078150981105864, "feat": [2.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 697.1911989967339, "feat": [3.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 8000000 | shuf | sort -n > /dev/null", "dur_ms": 3941.6229429771192, "feat": [0.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 677.8329460066743, "feat": [3.0, 3000000.0]}
+{"first_word": "sort", "cmd": "seq 100000 | shuf | sort -n > /dev/null", "dur_ms": 32.41298603825271, "feat": [0.0, 100000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 6.722082034684718, "feat": [1.0, 500000.0]}
+{"first_word": "sort", "cmd": "seq 1000000 | shuf | sort -n > /dev/null", "dur_ms": 387.6422679750249, "feat": [0.0, 1000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 410.37598601542413, "feat": [4.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(8000000)];a.sort();print(a[0])\"", "dur_ms": 2075.5424100207165, "feat": [3.0, 8000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 15.946571016684175, "feat": [3.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(100000)))\"", "dur_ms": 17.531902994960546, "feat": [3.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"print(sum(range(1000000)))\"", "dur_ms": 21.932928008027375, "feat": [3.0, 1000000.0]}
+{"first_word": "wc", "cmd": "seq 8000000 | wc -l > /dev/null", "dur_ms": 71.5171360061504, "feat": [2.0, 8000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 180.1768290461041, "feat": [0.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 1000000 | grep -c 7 > /dev/null", "dur_ms": 7.86543102003634, "feat": [1.0, 1000000.0]}
+{"first_word": "sort", "cmd": "seq 500000 | shuf | sort -n > /dev/null", "dur_ms": 183.81091195624322, "feat": [0.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 500000 | grep -c 7 > /dev/null", "dur_ms": 6.77929597441107, "feat": [1.0, 500000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(100000)];a.sort();print(a[0])\"", "dur_ms": 30.05251899594441, "feat": [3.0, 100000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(3000000)];a.sort();print(a[0])\"", "dur_ms": 690.4329250101, "feat": [3.0, 3000000.0]}
+{"first_word": "python3", "cmd": "python3 -c \"import random;a=[random.random() for _ in range(500000)];a.sort();print(a[0])\"", "dur_ms": 105.05059699062258, "feat": [3.0, 500000.0]}
+{"first_word": "grep", "cmd": "seq 8000000 | grep -c 7 > /dev/null", "dur_ms": 68.24987701838836, "feat": [1.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 409.28803401766345, "feat": [4.0, 8000000.0]}
+{"first_word": "awk", "cmd": "seq 8000000 | awk '{s+=$1} END{print s}' > /dev/null", "dur_ms": 415.8009620150551, "feat": [4.0, 8000000.0]}

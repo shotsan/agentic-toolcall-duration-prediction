@@ -1,0 +1,13 @@
+# Large reproducible artifacts (regenerate via scripts)
+saved_code/
+gpt5_trajs/
+gpt5_trajs_all/
+scratch/
+__pycache__/
+*.pyc
+# transient logs
+*.log
+/tmp/
+# large intermediate (keep the key result jsonl/csv, drop bulky duplicates)
+cachegrind_scores.jsonl
+cachegrind_full.jsonl
