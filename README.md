@@ -176,25 +176,44 @@ Removing the fixed startup cost:
 
 ## 5. Repository layout
 
-Pipeline:
-- `fetch_trajs.py`, `extract_all_cmds.py` — download + parse GPT-5 trajectories
-- `gen_swebench_traces.py`, `measure_trajs.py` — measure wall-clock in Docker
-- `extract_code.py` — save full referenced-file content from Docker
-- `apriori_static.py` — predictors 1,2,3,6 (static, no run)
-- `apriori_sim.py`, `run_cachegrind_docker.py` — predictors 4,5 (cachegrind in
-  the task Docker, `--trace-children`, full command)
-- `show_all_methods.py`, `show_warm.py` — produce the result tables
-
-Data / results:
-- `swe_verified_durations.jsonl` — measured durations (ground truth)
-- `cachegrind_docker.jsonl` — method 4/5 cycle & mispredict counts
-- `apriori_scores.jsonl` — method 1,2,3,6 scores
-- `all_methods_table.csv`, `warm_cold_table.csv` — final per-command tables
-
-Docs:
-- `APRIORI_PLAN.md` — the authoritative design (hard rules, the six methods)
-- `CONTINUUM_EXPLAINED.md` — Continuum's method, quoted from paper + code
-- `APRIORI_RESULTS.md`, `DELAY_RESULT.md` — detailed result logs
+```
+.
+├── README.md
+├── docs/            design + result documents
+│   ├── APRIORI_PLAN.md          authoritative design (hard rules, the six methods)
+│   ├── CONTINUUM_EXPLAINED.md   Continuum's method, quoted from paper + code
+│   ├── CONTINUUM_REPO.md        notes on the official vllm-continuum repo
+│   ├── APRIORI_RESULTS.md       detailed a-priori result log
+│   ├── DELAY_RESULT.md          delay-prediction result log
+│   ├── PREDICTION_TASK.md       task definition
+│   └── DESIGN.md, RESULTS.md, BENCHMARK.md, SWEBENCH_PIPELINE.md, ...
+├── src/
+│   ├── pipeline/    data collection
+│   │   ├── fetch_trajs.py / extract_all_cmds.py   download + parse GPT-5 trajectories
+│   │   ├── measure_trajs.py / measure.py          measure wall-clock in Docker
+│   │   ├── extract_code.py                        save referenced-file content from Docker
+│   │   └── run_cachegrind_docker.py               cachegrind inside task Docker (method 4,5)
+│   ├── predictors/  the a-priori methods
+│   │   ├── apriori_static.py    methods 1,2,3,6 (static, no run)
+│   │   ├── apriori_sim.py       methods 4,5 (cachegrind / branch-sim)
+│   │   └── features_ast.py      AST feature extraction
+│   └── analysis/    comparison + reporting
+│       ├── show_all_methods.py  per-command table of all methods
+│       ├── show_warm.py         warm-start vs cold-start view
+│       ├── delay_predict.py     cycles -> seconds delay predictor
+│       └── final_compare.py, predict_swe.py, ...
+├── data/            ground truth + measured outputs (jsonl)
+│   ├── swe_verified_durations.jsonl   measured durations (ground truth)
+│   ├── cachegrind_docker.jsonl        method 4/5 cycle & mispredict counts
+│   ├── apriori_scores.jsonl           method 1,2,3,6 scores
+│   └── trajs_commands.jsonl           parsed agent commands
+├── results/         final tables + logs
+│   ├── all_methods_table.csv          every command, all methods
+│   ├── warm_cold_table.csv            warm vs cold per command
+│   └── predictions_table.csv, results_log.{csv,md}
+└── deprecated/      early synthetic / BFCL / shell / scheduler-sim experiments
+                     (kept for transparency; NOT part of the final study)
+```
 
 ---
 
