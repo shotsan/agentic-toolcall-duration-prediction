@@ -136,10 +136,11 @@ values: `all_methods_table.csv`.
  6.334    0.126    6.028   ls -la && printf ... REPO TREE WALK
 ```
 
-Observations (numbers, not spin):
-- **Continuum is a first-word hardcode.** For `ls -la && <6.3s tree walk>` it
-  predicts **0.126 s** (first word `ls` → "fast"), off by ~50×. It only matches
-  the trivial ~0.1s majority by coincidence.
+Observations:
+- **Continuum keys on the first word.** For `ls -la && <6.3s tree walk>` it
+  predicts **0.126 s** (first word `ls`), while the command takes 6.3 s. It
+  aligns well with the trivial ~0.1s majority, where the first word is a good
+  guide.
 - **M4 tracks command work.** It predicts **6.03 s** for that 6.3 s command —
   the case where Continuum diverges most.
 - **M4 diverges on `pytest -x` / `pip install`**: cachegrind's instruction count
@@ -180,7 +181,114 @@ Removing the fixed startup cost:
 
 ---
 
-## 5. Repository layout
+## 5. Related work
+
+A fast-growing body of recent work studies KV-cache management for agentic LLM
+serving. We summarize the most relevant papers, their key insight, a note on the
+aspect our work complements, and how this study relates. All of these are strong
+contributions; we position our work as a reproducible measurement study of the
+*pre-call duration-prediction* sub-problem they each touch.
+
+**Continuum — Efficient and Robust Multi-Turn LLM Agent Scheduling with KV Cache
+Time-to-Live** (arXiv 2511.02230).
+- Summary: pins a request's KV cache with a time-to-live during tool calls,
+  evicting on expiry.
+- Key insight: a modest TTL plus program-level FCFS captures most of the reuse
+  benefit while staying robust to imperfect duration estimates.
+- Aspect we complement: its duration estimate keys on the command's first word,
+  so calls sharing a verb receive the same estimate regardless of arguments.
+- Our relation: we benchmark that estimate against six code-aware a-priori
+  methods on the same SWE-bench Verified / mini-SWE-agent setup, and quantify
+  where first-word estimation matches and diverges from measured durations.
+
+**Ask the Tool, Don't Guess: Agent Tool Calls Hold Their Progress** (arXiv
+2609.18849).
+- Summary: proposes reading a tool's live progress while it runs, instead of
+  estimating its duration beforehand, to guide KV-cache decisions.
+- Key insight: a few long calls hold most tool time, and a running tool often
+  contains a recoverable progress signal that is very accurate near the end.
+- Aspect we complement: the comparison contrasts a signal observed partway
+  through a call (50-90% elapsed) with estimates fixed before the call, which
+  are different information regimes; and the remaining-time conversion still
+  depends on the environment's execution rate, which no tool observes directly.
+- Our relation: our work targets the *pre-call* decision (pin or not, how long),
+  where no progress signal yet exists; we also decompose duration as
+  work-amount x environment-rate and note the environment term is outside the
+  reach of both pre-call estimators and in-flight progress readers.
+
+**MORI — Idleness is Relative: Exploiting Tool-Call Idle Windows for Offloading**
+(arXiv 2606.00866).
+- Summary: ranks programs by idleness and tiers their KV cache between GPU HBM
+  and CPU DRAM accordingly.
+- Key insight: relative idleness across concurrent programs is a strong signal
+  for where to place each cache.
+- Aspect we complement: placement is driven by observed engine-side idleness
+  rather than an estimate of how long the current call will take.
+- Our relation: a per-call duration estimate (our focus) is complementary input
+  that could inform such tiering decisions.
+
+**TokenCake — A KV-Cache-centric Serving Framework for Multi-Agent Applications**
+(arXiv 2510.18586).
+- Summary: co-optimizes temporal (offload during calls) and spatial (memory
+  partitioning) scheduling with an agent-aware design.
+- Key insight: proactive offload during function calls plus predictive upload
+  hides transfer latency on the critical path.
+- Aspect we complement: it uses a declared/fixed duration estimate per call.
+- Our relation: we study how accurately such a per-call estimate can be formed
+  a-priori from the command itself.
+
+**Adaptive KV Retention for LLM Agents at Human-Approval Timescales** (arXiv
+2608.30830).
+- Summary: a retention controller for pauses that last minutes to hours (human
+  approval), balancing residency cost against recomputation.
+- Key insight: at human timescales the tradeoff differs sharply from
+  seconds-scale tool pauses, and a tiered controller handles it well.
+- Aspect we complement: it targets a different (much longer) pause regime than
+  the sub-second-to-seconds tool calls we measure.
+- Our relation: our duration study is about the short/compute tool-call regime;
+  the two address different points on the pause-duration spectrum.
+
+**CacheWise — Understanding Workloads and Optimizing KVCache Management for LLM
+Coding Agents** (arXiv 2606.16824).
+- Summary: characterizes coding-agent workloads and optimizes eviction
+  accordingly.
+- Key insight: coding-agent KV reuse has structure (within-turn vs across-turn)
+  that a workload-aware policy can exploit.
+- Aspect we complement: its learned estimate clusters tool names and arguments.
+- Our relation: we evaluate code-level (bytecode / cost-analysis) signals as an
+  additional a-priori input beyond name/argument clustering.
+
+**PBKV — Efficient Serving for Dynamic Agent Workflows with Prediction-based
+KV-Cache Management** (arXiv 2605.06472).
+- Summary: predicts future agent invocations by fusing historical workflows with
+  the current workflow's context.
+- Key insight: workflow-level prediction of *which* steps come next helps
+  prefetch/retain the right caches.
+- Aspect we complement: it predicts the sequence of invocations rather than the
+  duration of an individual tool call.
+- Our relation: our focus is orthogonal (per-call duration), and could sit
+  beside workflow-level prediction.
+
+**Characterizing Coding Agent Workloads for LLM Serving** (arXiv 2606.30560).
+- Summary: a measurement study of coding-agent serving workloads.
+- Key insight: explicitly names "semantic-aware tool-latency prediction" as an
+  open opportunity.
+- Aspect we complement: it characterizes the opportunity rather than building a
+  duration predictor.
+- Our relation: our study is a direct, reproducible attempt at exactly that
+  tool-latency-prediction opportunity, with its successes and limits reported.
+
+### Where this work sits
+We agree with the shared observation across these works that a tool call's
+absolute wall-clock time depends on the runtime environment (machine load, I/O,
+remote-service rates) and is therefore hard to pin exactly before the call. Our
+contribution is a careful, reproducible measurement — on the full SWE-bench
+Verified / mini-SWE-agent benchmark — of how far code-aware a-priori methods get
+on the *pre-call* estimation problem, separating the predictable *work-amount*
+component from the environment-dependent *rate* component, and comparing six
+such methods head-to-head with Continuum's first-word estimate.
+
+## 6. Repository layout
 
 ```
 .
@@ -223,7 +331,7 @@ Removing the fixed startup cost:
 
 ---
 
-## 6. Reproducibility notes
+## 7. Reproducibility notes
 - Hardware: Intel i7-13700F (P-core 5.1 GHz), 32 GB RAM, RTX 4060 Ti 16 GB.
 - Durations are machine-specific; the comparisons are what matter.
 - Docker images: `swebench/sweb.eval.x86_64.*` (authenticated pulls).
